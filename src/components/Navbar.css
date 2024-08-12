@@ -56,6 +56,18 @@ nav {
 /* Ensure the offcanvas covers half the screen */
 .offcanvas {
   width: 30%;
+  background-color: rgb(2, 2, 67) !important;
+  color: white !important;
+}
+
+.offcanvas-body ul {
+  position: relative;
+  bottom: 25vh;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .routes {

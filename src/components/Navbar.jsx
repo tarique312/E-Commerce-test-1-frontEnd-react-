@@ -98,15 +98,15 @@ const Navbar = ({ onSearch, onFilter, cartItems }) => {
         <div className="offcanvas-body nav-links">
           <ul>
             <li onClick={() => handleItemClick("/filter")}>
-              <FaFilter onClick={onFilter} size={24} />
+              <FaFilter onClick={onFilter} size={28} />
             </li>
             <li onClick={() => handleItemClick("/cart")}>
-              <Link to={"/cart"} className="routes text-dark">
+              <Link to={"/cart"} className="routes">
                 <div className="position-relative">
-                  <FaCartShopping size={24} />
+                  <FaCartShopping size={28} />
                   {cartItems.length > 0 && (
                     <span
-                      className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      className="position-absolute top-0 start-100 translate-middle badge rounded-pill"
                       style={{
                         fontSize: "0.75rem",
                         transform: "translate(-50%, -50%)",
@@ -119,7 +119,7 @@ const Navbar = ({ onSearch, onFilter, cartItems }) => {
               </Link>
             </li>
             <li onClick={() => handleItemClick("/profile")}>
-              <IoPersonCircleSharp size={24} />
+              <IoPersonCircleSharp size={28} />
             </li>
           </ul>
         </div>
