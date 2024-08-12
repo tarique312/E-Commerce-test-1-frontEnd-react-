@@ -2,7 +2,16 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import "./CardList.css";
 
-const CardList = ({ searchQuery, priceRange, setCartItems, cartItems, itemsArr,loading, handleDelete }) => {
+const CardList = ({
+  searchQuery,
+  priceRange,
+  setCartItems,
+  cartItems,
+  itemsArr,
+  loading,
+  handleDelete,
+  indianNumberFormat,
+}) => {
   const filteredItems = itemsArr.filter((item) => {
     const matchesSearchQuery = item.title
       .toLowerCase()
@@ -35,6 +44,7 @@ const CardList = ({ searchQuery, priceRange, setCartItems, cartItems, itemsArr,l
             setCartItems={setCartItems}
             cartItems={cartItems}
             handleDelete={handleDelete}
+            indianNumberFormat={indianNumberFormat}
           />
         ))
       ) : (

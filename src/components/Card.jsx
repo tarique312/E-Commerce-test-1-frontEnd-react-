@@ -1,6 +1,12 @@
 import "./Card.css";
 
-const Card = ({ item, setCartItems, cartItems, handleDelete }) => {
+const Card = ({
+  item,
+  setCartItems,
+  cartItems,
+  handleDelete,
+  indianNumberFormat,
+}) => {
   const isInCart = cartItems.some((cartItem) => cartItem.id === item.id);
 
   return (
@@ -9,8 +15,8 @@ const Card = ({ item, setCartItems, cartItems, handleDelete }) => {
       <div className="card__body">
         <h5 className="card__title">{item.title}</h5>
         <p className="card__text">
-          <span>{item.mrp}</span>
-          <span className="price">{item.price}</span>
+          <span>{indianNumberFormat(item.mrp)}</span>
+          <span className="price">{indianNumberFormat(item.price)}</span>
         </p>
         {isInCart ? (
           <button

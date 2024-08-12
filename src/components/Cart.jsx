@@ -1,7 +1,7 @@
 import "./Cart.css";
 import CartCard from "./CartCard";
 
-const Cart = ({ cartItems, handleDelete }) => {
+const Cart = ({ cartItems, handleDelete, indianNumberFormat }) => {
   // Calculate total MRP, price, and discount
   const totals = cartItems.reduce(
     (acc, item) => {
@@ -17,13 +17,22 @@ const Cart = ({ cartItems, handleDelete }) => {
     <div className="cart">
       <div className="cart-item">
         {cartItems.map((item, i) => (
-          <CartCard key={i} item={item} handleDelete={handleDelete} />
+          <CartCard
+            key={i}
+            item={item}
+            handleDelete={handleDelete}
+            indianNumberFormat={indianNumberFormat}
+          />
         ))}
       </div>
       <div className="total">
-        <p className="mrp">Total MRP: {totals.TOTAL_MRP}</p>
-        <h4 className="price">Total Price: {totals.TOTAL_PRICE}</h4>
-        <p className="discount">Total Discount: {totals.TOTAL_DISCOUNT}</p>
+        <p className="mrp">Total MRP: {indianNumberFormat(totals.TOTAL_MRP)}</p>
+        <h4 className="price">
+          Total Price: {indianNumberFormat(totals.TOTAL_PRICE)}
+        </h4>
+        <p className="discount">
+          Total Discount: {indianNumberFormat(totals.TOTAL_DISCOUNT)}
+        </p>
         <button className="btn btn-success">Buy Now</button>
       </div>
     </div>
