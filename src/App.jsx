@@ -15,6 +15,19 @@ const App = () => {
   const [itemsArr, setItemsArr] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const indianNumberFormat = (value) => {
+    const strValue = value.toString();
+    const lastThreeDigits = strValue.slice(-3);
+    const otherDigits = strValue.slice(0, -3);
+
+    const formattedValue =
+      otherDigits.replace(/\B(?=(\d{2})+(?!\d))/g, ",") +
+      (otherDigits ? "," : "") +
+      lastThreeDigits;
+
+    return formattedValue;
+  };
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -71,13 +84,20 @@ const App = () => {
                 itemsArr={itemsArr}
                 loading={loading}
                 handleDelete={handleDelete}
+                indianNumberFormat={indianNumberFormat}
               />
             </>
           }
         />
         <Route
           path="/cart"
-          element={<Cart cartItems={cartItems} handleDelete={handleDelete} />}
+          element={
+            <Cart
+              cartItems={cartItems}
+              handleDelete={handleDelete}
+              indianNumberFormat={indianNumberFormat}
+            />
+          }
         />
       </Routes>
       <Footer />
