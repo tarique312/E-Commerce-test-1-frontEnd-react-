@@ -1,0 +1,64 @@
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(10, 10, 136);
+  color: white;
+  padding: 2.5vh 6.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  list-style: none;
+  margin: 0 2vw;
+  font-size: 3.5vh;
+}
+
+.searchbar {
+  width: 30vw;
+}
+
+.searchbar input {
+  font-size: 15px;
+  width: 90%;
+  padding: 0 8px;
+  height: 32px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Ensure the offcanvas covers half the screen */
+.offcanvas {
+  width: 30%;
+}
+
+.routes {
+  text-decoration: none;
+  color: white;
+}

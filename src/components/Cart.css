@@ -1,0 +1,44 @@
+.cart {
+  display: flex;
+  align-items: center;
+  margin: 5vh 15vw;
+}
+
+.cart-item {
+  width: 80%;
+}
+
+.total {
+  border: rgba(238, 166, 31, 0.767) solid 2px;
+  width: 30vw;
+  border-radius: 10px;
+  padding: 3vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mrp{
+  text-decoration: line-through;
+  color: rgba(243, 179, 2, 0.888);
+  font-weight: 700;
+}
+
+.price{
+  color: blue;
+}
+
+.discount{
+  color: green;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .cart{
+    display: block;
+  }
+
+  .total{
+    width: 70vw;
+  }
+}
